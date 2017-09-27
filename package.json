@@ -1,12 +1,17 @@
 {
   "name": "react-logarithmic-scale-graph",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Reactjs Logarithmic scale graph using D3",
   "main": "build/index.js",
   "scripts": {
     "dev": "babel src -d build --watch",
     "build": "babel src -d build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests/index.test.js -w",
+    "commit": "git-cz",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "czConfig": {
+    "path": "node_modules/cz-conventional-changelog"
   },
   "babel": {
     "presets": [
@@ -15,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dhruv004/react-logarithmic-scale-graph.git"
+    "url": "https://github.com/dhruv004/react-logarithmic-scale-graph.git"
   },
   "keywords": [
     "reactjs",
@@ -33,6 +38,11 @@
   "devDependencies": {
     "babel-cli": "6.26.0",
     "babel-preset-latest": "6.24.1",
+    "chai": "4.1.2",
+    "commitizen": "2.9.6",
+    "cz-conventional-changelog": "2.0.0",
+    "mocha": "3.5.3",
+    "semantic-release": "^8.0.3",
     "watch": "1.0.2"
   }
 }
