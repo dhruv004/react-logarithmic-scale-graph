@@ -1,0 +1,38 @@
+{
+  "name": "react-logarithmic-scale-graph",
+  "version": "1.0.0",
+  "description": "Reactjs Logarithmic scale graph using D3",
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "babel src -d build --watch",
+    "build": "babel src -d build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "babel": {
+    "presets": [
+      "latest"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhruv004/react-logarithmic-scale-graph.git"
+  },
+  "keywords": [
+    "reactjs",
+    "logarithmic",
+    "scale",
+    "graph",
+    "D3"
+  ],
+  "author": "Dhruv <dhruv.datt@talentica.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dhruv004/react-logarithmic-scale-graph/issues"
+  },
+  "homepage": "https://github.com/dhruv004/react-logarithmic-scale-graph#readme",
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-preset-latest": "6.24.1",
+    "watch": "1.0.2"
+  }
+}
