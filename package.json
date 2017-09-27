@@ -8,6 +8,7 @@
     "build": "babel src -d build",
     "test": "mocha tests/index.test.js -w",
     "test:single": "mocha tests/index.test.js",
+    "precommit": "npm run test:single",
     "commit": "git-cz",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
@@ -42,6 +43,7 @@
     "chai": "4.1.2",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.0.0",
+    "husky": "0.14.3",
     "mocha": "3.5.3",
     "semantic-release": "^8.0.3",
     "watch": "1.0.2"
