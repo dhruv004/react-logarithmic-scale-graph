@@ -5,7 +5,12 @@
   "main": "build/index.js",
   "scripts": {
     "dev": "babel src -d build --watch",
-    "build": "babel src -d build",
+    "prebuild": "rimraf dist",
+    "build": "npm-run-all --parallel build:*",
+    "build:main": "babel --copy-files src -d build",
+    "build:umd": "webpack --output-filename index.umd.js",
+    "build:umd.min": "webpack --output-filename index.umd.min.js -p",
+    "end": "copyfiles -a build/**/* ../test-react/node_modules/react-logarithmic-scale-graph/",
     "test": "mocha tests/index.test.js -w",
     "test:single": "mocha tests/index.test.js",
     "precommit": "npm run test:single",
@@ -14,11 +19,6 @@
   },
   "czConfig": {
     "path": "node_modules/cz-conventional-changelog"
-  },
-  "babel": {
-    "presets": [
-      "latest"
-    ]
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,10 @@
     "graph",
     "D3"
   ],
+  "files": [
+    "build",
+    "README.md"
+  ],
   "author": "Dhruv <dhruv.datt@talentica.com>",
   "license": "MIT",
   "bugs": {
@@ -39,13 +43,24 @@
   "homepage": "https://github.com/dhruv004/react-logarithmic-scale-graph#readme",
   "devDependencies": {
     "babel-cli": "6.26.0",
+    "babel-loader": "7.1.2",
+    "babel-plugin-transform-class-properties": "6.24.1",
     "babel-preset-latest": "6.24.1",
+    "babel-preset-react": "6.24.1",
     "chai": "4.1.2",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.0.0",
     "husky": "0.14.3",
+    "json-loader": "0.5.7",
     "mocha": "3.5.3",
+    "npm-run-all": "4.1.1",
+    "rimraf": "2.6.2",
     "semantic-release": "^8.0.3",
-    "watch": "1.0.2"
+    "underscore": "1.8.3",
+    "watch": "1.0.2",
+    "webpack": "3.6.0"
+  },
+  "dependencies": {
+    "d3": "4.10.2"
   }
 }
