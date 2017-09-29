@@ -32,7 +32,7 @@ export default class HorizontalClass extends Component{
         },
         {
             text:'six',
-            alternateText:'6',
+            alternateText:'6(six)',
             level:6,
             v:6
         },{
