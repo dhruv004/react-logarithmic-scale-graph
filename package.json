@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "babel src -d build --watch",
     "prebuild": "rimraf dist",
-    "build": "npm-run-all --parallel build:*",
-    "build:main": "babel --copy-files src -d build",
+    "build": "babel --copy-files src -d build",
     "end": "copyfiles -a build/**/* ../test-react/node_modules/react-logarithmic-scale-graph/",
     "test": "mocha tests/index.test.js -w",
     "test:single": "mocha tests/index.test.js",
