@@ -1,4 +1,4 @@
-﻿# react-logarithmic-scale-graph
+# react-logarithmic-scale-graph
 
 ## Install
 
