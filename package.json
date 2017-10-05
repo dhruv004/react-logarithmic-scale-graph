@@ -12,8 +12,7 @@
     "test:single": "mocha tests/index.test.js",
     "precommit": "npm run test:single",
     "commit": "git-cz",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "postinstall": "npm install"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "czConfig": {
     "path": "node_modules/cz-conventional-changelog"
