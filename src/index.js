@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import BarChart from './horizontal-graph/bar-chart'
 
-export default class HorizontalClass extends Component{
+class HorizontalGraph extends Component{
     render(){
         var input = [{
             text:'one',
@@ -43,8 +43,19 @@ export default class HorizontalClass extends Component{
         }]
         return(
             <h1>
-                <BarChart input={input}/>
+                <BarChart input={input} {...this.props}/>
             </h1>
         )
     }
 }
+
+HorizontalGraph.defaultProps={
+    color:"#a1e3e2",
+    alternateColor:"#fde4bb",
+    barHeight:35,
+    axisMargin:40,
+    barPadding:5,
+    sort:'ascending'
+}
+
+export default HorizontalGraph;

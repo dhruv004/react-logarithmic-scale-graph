@@ -62,24 +62,31 @@ var BarChart = function (_Component) {
         value: function render() {
             var _props = this.props,
                 sort = _props.sort,
-                input = _props.input;
+                input = _props.input,
+                color = _props.color,
+                alternateColor = _props.alternateColor,
+                barHeight = _props.barHeight,
+                axisMargin = _props.axisMargin,
+                barPadding = _props.barPadding;
             var width = this.state.width;
 
             var calculatedWidth = width < 767 ? width * 0.88 : width < 1024 ? width * 0.75 : width * 0.60;
             var data = input;
-            var height = 300,
-                barHeight = 35,
-                axisMargin = 40,
-                barPadding = 5;
+            var height = height = data.length * (barHeight + barPadding * 2) + axisMargin * 2;
 
-            height = data.length * (barHeight + barPadding * 2) + axisMargin * 2;
-
-            console.log(calculatedWidth);
-            console.log(height);
             return _react2.default.createElement(
                 _chart2.default,
                 { width: calculatedWidth, height: height },
-                _react2.default.createElement(_dataSeries2.default, { data: data, width: calculatedWidth, height: height, barPadding: barPadding, axisMargin: axisMargin, barHeight: barHeight, color: '#a1e3e2', alternateColor: '#fde4bb', sort: sort })
+                _react2.default.createElement(_dataSeries2.default, {
+                    data: data,
+                    width: calculatedWidth,
+                    height: height,
+                    barPadding: barPadding,
+                    axisMargin: axisMargin,
+                    barHeight: barHeight,
+                    color: color,
+                    alternateColor: alternateColor,
+                    sort: sort })
             );
         }
     }]);

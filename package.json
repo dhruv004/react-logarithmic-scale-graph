@@ -7,7 +7,7 @@
     "dev": "babel src -d build --watch",
     "prebuild": "rimraf dist",
     "build": "babel --copy-files src -d build",
-    "end": "copyfiles -a build/**/* ../test-react/node_modules/react-logarithmic-scale-graph/",
+    "end": "copyfiles -a build/**/* ../react-app/node_modules/react-logarithmic-scale-graph/",
     "test": "mocha tests/index.test.js -w",
     "test:single": "mocha tests/index.test.js",
     "precommit": "npm run test:single",
@@ -27,6 +27,11 @@
     "scale",
     "graph",
     "D3"
+  ],
+  "files": [
+    "build",
+    "package.json",
+    "README.md"
   ],
   "author": "Dhruv <dhruv.datt@talentica.com>",
   "license": "MIT",

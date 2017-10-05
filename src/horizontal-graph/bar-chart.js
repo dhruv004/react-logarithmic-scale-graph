@@ -28,20 +28,25 @@ export default class BarChart extends Component{
     }
 
     render(){
-        const {sort, input} = this.props;
+        const {sort, input, color, alternateColor, barHeight, axisMargin, barPadding} = this.props;
         const {width} = this.state;
         let calculatedWidth = width<767 ? width*0.88 : width < 1024 ? width*0.75 : width* 0.60;
         let data = input;
-        let height=300,barHeight=35,axisMargin=40,barPadding=5;
+        let height = height = data.length * (barHeight+barPadding*2) + axisMargin*2;
 
-        height = data.length * (barHeight+barPadding*2) + axisMargin*2;
-
-        console.log(calculatedWidth)
-        console.log(height)
         return(
-        <Chart width={calculatedWidth} height={height}>
-            <DataSeries data={data} width={calculatedWidth} height={height} barPadding={barPadding} axisMargin={axisMargin} barHeight={barHeight} color="#a1e3e2" alternateColor="#fde4bb" sort={sort} />
-        </Chart>
+            <Chart width={calculatedWidth} height={height}>
+                <DataSeries 
+                    data={data} 
+                    width={calculatedWidth} 
+                    height={height} 
+                    barPadding={barPadding} 
+                    axisMargin={axisMargin} 
+                    barHeight={barHeight} 
+                    color={color} 
+                    alternateColor={alternateColor}
+                    sort={sort} />
+            </Chart>
         )
     }
 }
