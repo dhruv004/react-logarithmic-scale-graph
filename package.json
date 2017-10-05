@@ -28,12 +28,6 @@
     "graph",
     "D3"
   ],
-  "files": [
-    "build",
-    "package.json",
-    "node_modules",
-    "README.md"
-  ],
   "author": "Dhruv <dhruv.datt@talentica.com>",
   "license": "MIT",
   "bugs": {
