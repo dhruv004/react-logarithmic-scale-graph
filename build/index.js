@@ -61,12 +61,12 @@ var HorizontalClass = function (_Component) {
                 v: 5
             }, {
                 text: 'six',
-                alternateText: '6',
+                alternateText: '6(six)',
                 level: 6,
                 v: 6
             }, {
                 text: 'seven',
-                alternateText: '7',
+                alternateText: '7(seven)',
                 level: 7,
                 v: 7
             }];
